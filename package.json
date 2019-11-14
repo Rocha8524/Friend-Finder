@@ -1,0 +1,25 @@
+{
+  "name": "Node-Express---Friend-Finder",
+  "version": "1.0.0",
+  "description": "A compatibility-based application that will match user scores with one another. Basically a dating app.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rocha8524/Node-Express---Friend-Finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rocha8524/Node-Express---Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/Rocha8524/Node-Express---Friend-Finder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
