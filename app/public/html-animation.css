@@ -1,0 +1,87 @@
+body{
+    background: #3C5377;
+    }
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+#card-one{
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+#card-two{
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+  }
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+#card-one:hover{
+  transform: rotateY(180deg);
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+#card-two:hover{
+    transform: rotateY(180deg);
+  }
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ #front-one{
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #ffc728;
+  color: #000;
+}
+
+#front-two{
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #ffc728;
+    color: #000;
+  }
+  
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+#back-one{
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+#back-two{
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #fafafa;
+    color: #333;
+    transform: rotateY(180deg);
+  }
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+#front-one h1, #front-two h4{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.back-one h4, .back-two h4{
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+#front-one p, #front-two p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+#back-one h4, #back-two h4{
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: normal;
+    font-size: 12px;
+  }
