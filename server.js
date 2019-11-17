@@ -4,7 +4,7 @@ var path = require("path");
 
 //Bootstrapping express
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Middleware (encode and decode data)
 app.use(express.urlencoded({extended: true}));
