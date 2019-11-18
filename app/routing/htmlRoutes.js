@@ -9,7 +9,7 @@ app.get("/app/public/survey.html", function(request, response) {
 });
 
   // If no matching route is found default to home
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+  app.get("/", function(request, response) {
+    response.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };

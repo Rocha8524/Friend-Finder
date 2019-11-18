@@ -1,5 +1,4 @@
 // DATA: Below data will hold all of the friends
-
 var friendsArray = [
     {
         name = "Ahmed",
