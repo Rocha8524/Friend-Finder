@@ -1,8 +1,22 @@
 // On click function
 $("#submit").on("click", function () {
 
+    // Validate form
+    var userSurveyForm = true;
+
+    if ($("#name").val == "" || $("photo".val() == "")) {
+        userSurveyForm = false;
+    } if (
+        $("#q1").val() === "empty" || $("#q2").val() === "empty" ||
+        $("#q3").val() === "empty" || $("#q4").val() === "empty" ||
+        $("#q5").val() === "empty" || $("#q6").val() === "empty" ||
+        $("#q7").val() === "empty" || $("#q8").val() === "empty" ||
+        $("#q9").val() === "empty" || $("#q10").val() === "empty") {
+        valid = false;
+    }
+
     // If all required fields are filled
-    if (userSurveyForm() == true) {
+    if (userSurveyForm === true) {
 
 
         // Create variables for user data sent by survey questions
@@ -29,7 +43,7 @@ $("#submit").on("click", function () {
         $.post(currentURL + "/api/friends", userInput, function (data) {
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
             $("#matchName").text(data.name);
-            $("#matchImage").attribute("src", data.photo);
+            $("#matchPhoto").attribute("src", data.photo);
             // Show the modal with the best match 
             $("#resultsModal").modal('toggle');
         });

@@ -8,14 +8,14 @@ module.exports = function (app) {
     });
 
     app.post("/api/friends", function (request, response) {
-        
+
         // Will handle the incoming survey results and compatibility logic
         var userInput = request.body;
         var userResponse = userInput.scores;
         var match = {
             name: "",
             photo: "",
-            difference: 500
+            difference: 50
         };
 
         for (var i = 0; i < friends.length; i++) {
