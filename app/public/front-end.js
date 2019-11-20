@@ -1,5 +1,6 @@
 // On click function
 $("#submit").on("click", function () {
+    event.preventDefault();
 
     // Validate form
     var userSurveyForm = true;
@@ -17,7 +18,6 @@ $("#submit").on("click", function () {
 
     // If all required fields are filled
     if (userSurveyForm === true) {
-
 
         // Create variables for user data sent by survey questions
         var userInput = {
@@ -39,17 +39,19 @@ $("#submit").on("click", function () {
 
         // Grab the URL of the website
         var currentURL = window.location.origin;
+        
         // AJAX post the data to the friends route. 
         $.post(currentURL + "/api/friends", userInput, function (data) {
+            
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#matchName").text(data.name);
-            $("#matchPhoto").attribute("src", data.photo);
+            $("#best-friend").text(data.name);
+            $("#best-friend-photo").attribute("src", data.photo);
             // Show the modal with the best match 
-            $("#resultsModal").modal('toggle');
+            $("#results-modal").modal('toggle');
         });
     }
     else {
-        alert("Please fill out all fields before submitting!");
+        alert("Survey is not 100% completed. Please fill out all the questions before submitting. Thank you!");
     }
 
     return false;
