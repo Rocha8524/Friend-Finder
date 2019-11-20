@@ -47,7 +47,7 @@ $("#submit").on("click", function () {
             $("#best-friend").text(data.name);
             $("#best-friend-photo").attribute("src", data.photo);
             // Show the modal with the best match 
-            $("#results-modal").modal('toggle');
+            $("#results-modal").modal("toggle");
         });
     }
     else {

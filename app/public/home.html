@@ -7,56 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="C:\Users\rocha\Desktop\Bootcamp Assignments\Friend-Finder\app\public\html-animation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
 
-<body>
+<body style="background-color: #3C5377">
 
     <div class="container">
         <div class="jumbotron , text-center">
             <h1><i class="fab fa-facebook" aria-hidden="true"> Friend Finder</i></h1>
             <hr>
             <h3>The best way to find your next best friend</h3>
+            <br>
+            <div class="container">
+                <a href="/api/friends">See Your Friends List</a>
+                <span>|</span>
+                <a href="https://github.com/Rocha8524/Friend-Finder">Rocha's GitHub Repo</a>
+            </div>
         </div>
         <br>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div id="card-one" class="card , text-center">
                     <div id="front-one" class="card-header">
                         <h5>Fill out your personal survey</h5>
                     </div>
-                    <div id="front-one" class="card-body">
-                        <a href="https://kwiksurveys.com/wp-content/uploads/elementor/thumbs/How-To-Write-Good-Survey-Questions-o62kx3ykrixw6m2jba9fkai8mxscu5xxrmk6zcoxoo.png"></a>
-                    </div>
-
                     <div id="back-one" class="card-body">
-                        <p></p>
+                        <img class="img img-thumbnail"
+                            src="https://previews.123rf.com/images/krisdog/krisdog1501/krisdog150100013/35166914-survey-clipboard-and-cartoon-pen-ticking-or-crossing-boxes-on-a-survey-or-other-form.jpg">
                     </div>
 
                     <div id="back-one" class="card-footer">
-                        <a href="C:\Users\rocha\Desktop\Bootcamp Assignments\Friend-Finder\app\public\survey.html"><button class="btn btn-danger btn-lg"><span
-                        class="fa fa-eye"></span>Compatibility Survey</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div id="card-two" class="card , text-center">
-                    <div id="front-two" class="card-header">
-                        <h5>Fill out your personal survey</h5>
-                    </div>
-                    <div id="front-two" class="card-body">
-
-                    </div>
-
-                    <div id="back-two" class="card-body">
-
-                    </div>
-                    <div id="back-two" class="card-footer">
-                        <a href="/survey.html"><button class="btn btn-danger btn-lg"><span
-                                    class="fa fa-eye"></span>Compatibility Survey</button></a>
+                        <a href="..\app\public\survey.html"><button class="btn btn-primary btn-lg"></span>Compatibility
+                                Survey</button></a>
                     </div>
                 </div>
             </div>
@@ -71,7 +54,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="C:\Users\rocha\Desktop\Bootcamp Assignments\Friend-Finder\app\data\friends.js"></script>
+    <script type="text/javascript" src="..\app\data\friends.js"></script>
 
 </body>
 

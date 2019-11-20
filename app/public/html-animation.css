@@ -27,14 +27,12 @@ body{
  #front-one{
   backface-visibility: hidden;
   overflow: hidden;
-  background: #ffc728;
   color: #000;
 }
 
 #front-two{
     backface-visibility: hidden;
     overflow: hidden;
-    background: #ffc728;
     color: #000;
   }
   
