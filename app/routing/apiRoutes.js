@@ -2,13 +2,13 @@
 var friends = require("../data/friends.js");
 
 module.exports = function (app) {
-    
+
     // API GET Request
     app.get("/api/friends", function (request, response) {
         response.json(friends);
     });
 
-     // The post request handles when a user submits a form and data to the surver
+    // The post request handles when a user submits a form and data to the surver
     app.post("/api/friends", function (request, response) {
         console.log(request.body.scores);
 
@@ -16,7 +16,7 @@ module.exports = function (app) {
         var userInput = request.body;
         var userResponse = userInput.scores;
 
-         // Loops through all of the possible options
+        // Loops through all of the possible options
         var match = {
             name: "",
             photo: "",
@@ -26,7 +26,7 @@ module.exports = function (app) {
         for (var i = 0; i < friends.length - 1; i++) {
             var totalDifference = 0;
 
-            
+
             for (var j = 0; j < userResponse.length; j++) {
                 totalDifference += Math.abs(friends[i].scores[j] - userResponse[j]);
 
