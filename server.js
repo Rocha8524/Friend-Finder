@@ -11,15 +11,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Basic route that sends the user first to the AJAX Page
-app.get("/app/public/home.html", function (request, response) {
+app.get(".\app\public\home.html", function (request, response) {
     response.sendFile(path.join(__dirname, "home.html"))
 });
 
-app.get("/app/public/survey.html", function (request, response) {
+app.get(".\app\public\survey.html", function (request, response) {
     response.sendFile(path.join(__dirname, "survey.html"))
 });
 
 // Starts the server to begin listening
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("Server listening on: http://localhost:" + PORT);
 });
