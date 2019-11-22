@@ -189,7 +189,6 @@
         </div>
         <br>
 
-        <!-- Modal after survey completion -->
         <div id="results-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -213,8 +212,6 @@
         </footer>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <script type="text/javascript">
 
         // On click function
@@ -224,7 +221,7 @@
             // Validate form
             var userSurveyForm = true;
 
-            if ($("#name").val == "" || $("photo".val() == "")) {
+            if ($("#name").val === "" || $("photo".val() === "")) {
                 userSurveyForm = false;
             } if (
                 $("#q1").val() === "empty" || $("#q2").val() === "empty" ||
@@ -257,10 +254,10 @@
                 }
 
                 // Grab the URL of the website
-                var currentURL = window.location.origin;
+                var url = window.location.origin;
 
                 // AJAX post the data to the friends route. 
-                $.post(currentURL + "/api/friends", userInput, function (data) {
+                $.post(url + "/api/friends", userInput, function (data) {
 
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#best-friend").text(data.name);
