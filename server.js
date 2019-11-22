@@ -11,11 +11,11 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Required to send to routes
-require('./app/routing/htmlRoutes')(app);
-require('./app/routing/apiRoutes')(app);
+require("./app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
 
 // Starts the server to begin listening
 app.listen(PORT, function () {
