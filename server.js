@@ -1,7 +1,6 @@
 // Modules used 
 var express = require("express");
 var bodyParser = require('body-parser');
-var path = require("path");
 
 //Bootstrapping express
 var app = express();
@@ -14,8 +13,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Required to send to routes
-require("./app/routing/htmlRoutes")(app);
 require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Starts the server to begin listening
 app.listen(PORT, function () {

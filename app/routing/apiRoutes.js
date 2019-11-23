@@ -5,7 +5,7 @@ module.exports = function (app) {
 
     // API GET Request
     app.get("/api/friends", function (request, response) {
-        response.json(friends);
+        res.json(friends);
     });
 
     // The post request handles when a user submits a form and data to the surver
@@ -26,6 +26,7 @@ module.exports = function (app) {
 
         for (var i = 0; i < friends.length - 1; i++) {
             var totalDifference = 0;
+            
             for (var j = 0; j < friends[i].scores.length; j++) {
                 var difference = Math.abs(user.scores[j] - friends[i].scores[j]);
                 totalDifference += difference;
