@@ -5,7 +5,7 @@ module.exports = function (app) {
 
     // API GET Request
     app.get("/api/friends", function (request, response) {
-        res.json(friends);
+        response.json(friends);
     });
 
     // The post request handles when a user submits a form and data to the surver
