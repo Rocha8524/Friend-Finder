@@ -180,74 +180,95 @@
                     </div>
                     <br>
                     <hr>
-
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
-                        id="submit">Submit</button>
-
-                </div>
             </form>
-        </div>
-        <br>
 
-        <div id="results-modal" class="modal fade" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title">Here's Your New Best Friend</h1>
-                            <button type="button" class="close" d="close-modal" data-dismiss="modal"
-                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <h4 id="best-friend"></h4>
-                        <img id="best-friend-photo" src="">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                    id="submit-form">Submit</button>
+            </div>
+
+        </div>
+
+    </div>
+    <br>
+
+    <div id="results-modal" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Here's Your New Best Friend</h1>
+                        <button type="button" class="close" d="close-modal" data-dismiss="modal"
+                            aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="best-friend"></h4>
+                    <img id="best-friend-photo" src="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
-        <footer class="jumbotron , text-center">
-            <h5> © 2019 Copyright Alexander Rocha</h5>
-        </footer>
     </div>
+
+    <footer class="jumbotron , text-center">
+        <h5> © 2019 Copyright Alexander Rocha</h5>
+    </footer>
 
     <script type="text/javascript">
 
         // On click function
-        $("#submit").on("click", function (event) {
+        $("#submit-form").on("click", function (event) {
             event.preventDefault();
 
+            // Form validation
+            var valid = true;
+
+            if ($("#name").val() === "" || $("#photo").val() === "") {
+                valid = false;
+
+            } else if (
+                $("#q1").val() === "empty" || $("#q2").val() === "empty" ||
+                $("#q3").val() === "empty" || $("#q4").val() === "empty" ||
+                $("#q5").val() === "empty" || $("#q6").val() === "empty" ||
+                $("#q7").val() === "empty" || $("#q8").val() === "empty" ||
+                $("#q9").val() === "empty" || $("#q10").val() === "empty") {
+                valid = false;
+            }
+
             // Create variables for user data sent by survey questions
-            var userInput = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val(),
-                ]
-            };
+            if (valid === true) {
+                var userInput = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                };
 
-            $("#friend-form").html("Thanks for your submission! Meet your new best friend!");
+                var currentURL = window.location.origin;
 
-            // AJAX post the data to the friends route. 
-            $.post("/api/friends", userInput)
-                .done(function (data) {
+                // Ajax call for receiving response after POST req
+                $.post(currentURL + "/api/friends", userInput, function (data) {
 
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#best-friend").text(data.name);
                     $("#best-friend-photo").attribute("src", data.photo);
-                    // Show the modal with the best match 
+                    $("#results-modal").modal("toggle");
                 });
+            } else {
+                // If a required field is missing, show an alert
+                alert("Survey is not completed! You must fill out all of the options if you are to find your new best friend!");
+            }
         });
 
     </script>
