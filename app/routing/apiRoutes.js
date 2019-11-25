@@ -22,7 +22,7 @@ module.exports = function (app) {
 
         // Default friend match and changes result to whoever has the minimum difference in scores
         var bestFriend = 0;
-        var minimumDifference = 40;
+        var minimumDifference = 30;
 
         for (var i = 0; i < friends.length - 1; i++) {
             var totalDifference = 0;
