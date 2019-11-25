@@ -24,7 +24,7 @@ module.exports = function (app) {
         var bestFriend = 0;
         var minimumDifference = 30;
 
-        for (var i = 0; i < friends.length - 1; i++) {
+        for (var i = 0; i < friends.length; i++) {
             var totalDifference = 0;
             
             for (var j = 0; j < friends[i].scores.length; j++) {
