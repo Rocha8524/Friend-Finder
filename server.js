@@ -1,5 +1,6 @@
 // Modules used 
 var express = require("express");
+var path = require('path');
 
 //Bootstrapping express
 var app = express();
@@ -13,8 +14,8 @@ app.use(express.json());
 app.use(express.static("app/public"));
 
 // Required to send to routes
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require(path.join(__dirname, "./app/routing/apiRoutes"))(app);
+require(path.join(__dirname, "./app/routing/htmlRoutes"))(app);
 
 // Starts the server to begin listening
 app.listen(PORT, function () {
