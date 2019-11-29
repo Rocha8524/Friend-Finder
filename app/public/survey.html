@@ -201,15 +201,14 @@
                     <h4 id="best-friend"></h4>
                     <img id="best-friend-photo" src="#">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer , text-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -270,12 +269,12 @@
                 // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                 $("#best-friend").text(data.name);
                 $("#best-friend-photo").attribute("src", data.photo);
-                $("#results-modal").modal("toggle");
             });
         } else {
             // If a required field is missing, show an alert
             alert("Survey is not completed! You must fill out all of the options if you are to find your new best friend!");
         }
+        $("#results-modal").modal("toggle");
     });
 
 </script>

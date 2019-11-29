@@ -15,20 +15,20 @@ module.exports = function (app) {
         // Will handle the incoming survey results and compatibility logic
         var userInput = request.body;
 
-        // Loops through all of the possible options
-        for (var i = 0; i < user.scores.length; i++) {
-            user.scores[i] = parseInt(user.scores[i]);
+        // Loops through all possible options
+        for (var i = 0; i < userInput.scores.length; i++) {
+            userInput.scores[i] = parseInt(userInput.scores[i]);
         }
 
         // Default friend match and changes result to whoever has the minimum difference in scores
         var bestFriend = 0;
-        var minimumDifference = 30;
+        var minimumDifference = 50;
 
         for (var i = 0; i < friends.length; i++) {
             var totalDifference = 0;
             
             for (var j = 0; j < friends[i].scores.length; j++) {
-                var difference = Math.abs(user.scores[j] - friends[i].scores[j]);
+                var difference = Math.abs(userInput.scores[j] - friends[i].scores[j]);
                 totalDifference += difference;
             }
 
